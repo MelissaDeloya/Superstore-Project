@@ -1,74 +1,31 @@
-# Fortune 500
-Project #1 
+
+## Write a SQL query that orders the items by price.
+
+SELECT the columns item and price
+FROM the table superstore
+ORDER the data BY the column price
 
 
-##Group the data in a new way using a CASE statement. 
 
-##Number of employees and establishing new vs. established business
-
- 
-SELECT company_name , employees,
-
-CASE WHEN employees <= 10000 THEN " New Business"
-
-WHEN employees >= 200000 THEN "Established Business"
-
-ELSE "Regular Business"
-
-END AS Business_Types
-
-FROM fortune_companies
-
-ORDER BY employees DESC;
+## Price for items in the category of "Kitchen Supplies"
 
  
 
+SELECT avg(price)
 
-##Use a HAVING clause to determine something interesting about the data per category.
+FROM superstore
 
-Industry and PTO time
-
- 
-SELECT industry , SUM (paid_time_off_days) AS PTO
-
-FROM fortune_companies
-
-GROUP BY industry
-
-HAVING SUM (paid_time_off_days) > 40
-
-
+WHERE category="Kitchen Supplies";
 
  
 
-##Use logical operators like AND or OR to filter the data in an interesting way.
+## Sum of Air Purifiers 
 
-Compare Tenure with PTO per industry
+SELECT sum(stock_quantity)
 
-SELECT *
+FROM superstore
 
-FROM fortune_companies
-
-WHERE avg_employee_tenure > 10
-
-OR paid_time_off_days <= 40
-
-ORDER BY avg_employee_tenure DESC;
-
-
-
- 
-
-##Use an aggregate function like AVG, SUM, COUNT, MAX, and/or MIN to return summary statistics about the data.
-
-##Average Revenue in Retail Sector 
-
-SELECT AVG (revenue)
-
-FROM fortune_companies
-
-WHERE industry = "Retail";
-
+WHERE item_name = "Air Purifier";
  
 
  
