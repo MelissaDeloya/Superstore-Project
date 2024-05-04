@@ -1,6 +1,4 @@
-# Superstore-Project
-Project #1 
-# Superstore-Project
+# Fortune 500
 Project #1 
 
 
